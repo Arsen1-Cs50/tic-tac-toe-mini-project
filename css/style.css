@@ -93,10 +93,10 @@ html, body {
 .mode-buttons {
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 45%;
   transform: translate(-50%, -50%);
-  background: rgba(54, 54, 54, 0.9);
-  backdrop-filter: blur(3px);
+  background: rgba(53, 53, 53, 0.9);
+  backdrop-filter: blur(2px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   padding: 40px;
   border-radius: 8px;
@@ -169,14 +169,14 @@ html, body {
 }
 
 .cell {
-  /* existing styles */
-  -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
-  touch-action: manipulation; /* improves touch responsiveness */
+  
+  -webkit-tap-highlight-color: transparent; 
+  touch-action: manipulation; 
 }
 
 .btn {
-  /* existing styles */
-  min-width: 120px; /* ensures buttons remain tappable */
+
+  min-width: 120px; 
   padding: 12px 24px;
 }
 
