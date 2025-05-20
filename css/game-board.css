@@ -42,18 +42,29 @@ body {
     max-width: 500px;
     max-height: 500px;
     margin: 0 auto;
+    background-color: rgba(30, 30, 30, 0.7); /* Slightly transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Very subtle border */
+    padding: 10px; /* Add some padding */
+    border-radius: 5px; /* Optional: slight rounding */
   }
   
   .cell {
-    background: #1e1e1e;
-    border: 2px solid #333;
+    background: rgba(30, 30, 30, 0.9); /* Slightly different shade */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Very subtle cell borders */
     font-size: 8vmin;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     user-select: none;
-  } 
+    transition: all 0.2s ease; /* Smooth hover effects */
+  }
+  
+  /* Optional: Add hover effect to make grid more visible during interaction */
+  .cell:hover {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(40, 40, 40, 0.9);
+  }
   .cell.x {
     color: #00bcd4;
   }
@@ -90,5 +101,49 @@ body {
     background: #444;
   }
   
+  .cell {
+    /* existing styles */
+    -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
+    touch-action: manipulation; /* improves touch responsiveness */
+  }
   
+  .btn {
+    /* existing styles */
+    min-width: 120px; /* ensures buttons remain tappable */
+    padding: 12px 24px;
+  }
+  
+  @media (orientation: landscape) and (max-height: 500px) {
+    .board {
+      width: 70vmin;
+      height: 70vmin;
+    }
+    
+    .game-container {
+      flex-direction: row;
+      gap: 2rem;
+    }
+    
+    .mode-buttons {
+      padding: 20px;
+    }
+    
+    .btn {
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+  }
+
+  h2#turnIndicator {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+  }
+  
+  .result-message {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+  }
+
+  body {
+    touch-action: pan-y;
+    -webkit-text-size-adjust: 100%;
+  }
   

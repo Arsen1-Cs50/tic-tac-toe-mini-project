@@ -168,5 +168,15 @@ html, body {
   }
 }
 
+.cell {
+  /* existing styles */
+  -webkit-tap-highlight-color: transparent; /* removes tap highlight on mobile */
+  touch-action: manipulation; /* improves touch responsiveness */
+}
 
+.btn {
+  /* existing styles */
+  min-width: 120px; /* ensures buttons remain tappable */
+  padding: 12px 24px;
+}
 
