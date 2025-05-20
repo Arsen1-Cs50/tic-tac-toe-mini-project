@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Arsen1c's Tic Tac Toe</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech&display=swap" rel="stylesheet">
+  
+</head>
+<body >
+
+  <!--  Intro Video -->
+  <div id="intro">
+    <video autoplay muted playsinline id="introVideo">
+      <source src="intro.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <!-- Hidden Content (Grid & Buttons) -->
+  <div id="app" class="hidden">
+
+    <!-- Grid Background -->
+    <div class="grid-background"></div>
+
+    <!-- Game Mode Selection -->
+    <div class="mode-buttons">
+      <h2>Game Mode</h2>
+      <button class="btn" onclick="selectMode('1p')"><span>1P</span></button>
+      <button class="btn" onclick="selectMode('2p')"><span>2P</span></button>
+    </div>
+
+  </div>
+
+  <script src="js/intro.js"></script>
+</body>
+</html>

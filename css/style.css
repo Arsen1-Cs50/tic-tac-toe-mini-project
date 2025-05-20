@@ -1,0 +1,172 @@
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.8s ease;
+}
+body {
+  opacity: 1;
+}
+
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Share Tech', sans-serif;
+  background-color: #161616;
+  overflow: hidden;
+}
+
+/* Hide until intro ends */
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#app.fade-in {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+}
+
+
+/* Intro Fullscreen Video */
+#intro {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 1s ease;
+}
+
+#intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Video Fills Entire Screen */
+#intro video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#app {
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+#app.fade-in {
+  opacity: 1;
+}
+
+/* Grid Background */
+.grid-background {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image:
+    linear-gradient(white 1px, transparent 1px),
+    linear-gradient(to right, white 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveGrid 1s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGrid {
+  from { background-position: 0 0; }
+  to { background-position: 0 40px; }
+}
+
+/* Game Mode Buttons UI */
+.mode-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(54, 54, 54, 0.9);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 40px;
+  border-radius: 8px;
+  z-index: 10;
+  text-align: center;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.mode-buttons h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  font-size: 22px;
+  padding: 14px 32px;
+  margin: 10px;
+  border: 2px solid #cacaca;
+  background: transparent;
+  color: #9c9c9c;
+  border-radius: 12px;
+  font-family: 'Share Tech', sans-serif;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: #b8b8b8;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+
+.btn:hover::before {
+  transform: scaleX(1);
+}
+
+.btn:hover {
+  color: #161616;
+}
+
+.btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
+}
+@media (orientation: landscape) and (max-width: 768px) {
+  .game-container::after {
+    content: "Rotate your device for best experience";
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+}
+
+
+
